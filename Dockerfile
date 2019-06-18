@@ -17,5 +17,6 @@ RUN npm install mongoose-auto-increment
 COPY . .
 
 EXPOSE 5000
+EXPOSE 27017
 
 CMD [ "npm", "start" ]
