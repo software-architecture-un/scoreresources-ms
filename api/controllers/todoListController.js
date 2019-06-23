@@ -14,6 +14,13 @@ exports.list_all_tasks = function(req, res) {
   });
 };
 
+exports.read_a_taskuser = function(req, res) {
+  Task.find({user_id:req.params.user_id}, function(err, task) {
+    if (err)
+      res.send(err);
+    res.json(task);
+  });
+};
 
 
 exports.create_a_task = function(req, res) {
