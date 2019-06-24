@@ -15,4 +15,9 @@ module.exports = function(app) {
 	
 	app.route('/scoreserviceUs/:user_id')
 		.get(todoList.read_a_taskuser)
+	app.route('/scoreserviceUsn/:user_id')
+		.get(todoList.read_a_taskusernumber);
+
+
+
 };

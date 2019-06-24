@@ -22,6 +22,19 @@ exports.read_a_taskuser = function(req, res) {
   });
 };
 
+exports.read_a_taskusernumber = function(req, res) {
+  Task.find({user_id:req.params.user_id}, function(err, task) {
+    if (err)
+      res.send(err);
+    if (task.length >0){
+      res.json(task.length);
+    }else{
+      res.json(-1);
+    }
+      
+  });
+};
+
 
 exports.create_a_task = function(req, res) {
   var new_task = new Task(req.body);
