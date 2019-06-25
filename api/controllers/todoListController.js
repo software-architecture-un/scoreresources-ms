@@ -27,9 +27,9 @@ exports.read_a_taskusernumber = function(req, res) {
     if (err)
       res.send(err);
     if (task.length >0){
-      res.json(task.length);
+      res.json({total: task.length});
     }else{
-      res.json(-1);
+      res.json({total: 0});
     }
       
   });
