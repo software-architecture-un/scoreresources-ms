@@ -14,11 +14,26 @@ var TaskSchema = new Schema({
   //service: String,
   //service_id: Number,
 
-  name: String,
-  description: String,
-  latitude: Number,
-  longitude: Number,
-  user_id: Number
+  name: {
+    type: String,
+    required: false
+  } ,
+  description: {
+    type: String,
+  required : false  
+  },
+  latitude: {
+    type: Number,
+    required: [true, 'Falta Latitud']
+  },
+  longitude: {
+    type: Number,
+    required: [true, 'Falta Longitud']
+  },
+  user_id: {
+    type: Number,
+    required: [true, 'Falta User_id']
+  }
 });
 
 
